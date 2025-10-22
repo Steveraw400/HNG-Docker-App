@@ -1,0 +1,56 @@
+[0;32m[INFO][0m 2025-10-21 23:25:05 - === Deployment Script Started at Tue Oct 21 23:25:05 UTC 2025 ===
+[0;32m[INFO][0m 2025-10-21 23:25:05 - Configuration:
+[0;32m[INFO][0m 2025-10-21 23:25:05 -   Repository: https://github.com/Steveraw400/HNG-Docker-App.git
+[0;32m[INFO][0m 2025-10-21 23:25:05 -   Branch: main
+[0;32m[INFO][0m 2025-10-21 23:25:05 -   Server: ubuntu@16.171.172.51
+[0;32m[INFO][0m 2025-10-21 23:25:05 -   SSH Host: ec2-16-171-172-51.eu-north-1.compute.amazonaws.com
+[0;32m[INFO][0m 2025-10-21 23:25:05 -   App Port: 5000
+[0;32m[INFO][0m 2025-10-21 23:25:05 -   App Name: my-docker-app
+[0;32m[INFO][0m 2025-10-21 23:25:05 - Starting deployment process...
+[0;32m[INFO][0m 2025-10-21 23:25:05 - === Validating Configuration ===
+[0;34m[SUCCESS][0m 2025-10-21 23:25:05 - Configuration validated
+[0;32m[INFO][0m 2025-10-21 23:25:05 - === Cloning/Updating Repository ===
+[0;32m[INFO][0m 2025-10-21 23:25:06 - Cloning repository...
+Cloning into '/tmp/deploy_1629/HNG-Docker-App'...
+[0;34m[SUCCESS][0m 2025-10-21 23:25:07 - Repository ready at: /tmp/deploy_1629/HNG-Docker-App
+[0;32m[INFO][0m 2025-10-21 23:25:07 - === Verifying Docker Configuration ===
+[0;34m[SUCCESS][0m 2025-10-21 23:25:07 - Found Dockerfile
+[0;32m[INFO][0m 2025-10-21 23:25:07 - === Testing SSH Connection ===
+[0;34m[SUCCESS][0m 2025-10-21 23:25:10 - SSH connection to ec2-16-171-172-51.eu-north-1.compute.amazonaws.com successful
+[0;32m[INFO][0m 2025-10-21 23:25:10 - === Setting Up Remote Environment ===
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-1035-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Oct 21 23:25:10 UTC 2025
+
+  System load:  0.0               Processes:             111
+  Usage of /:   35.2% of 7.57GB   Users logged in:       0
+  Memory usage: 36%               IPv4 address for ens5: 172.31.33.31
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+28 updates can be applied immediately.
+20 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+[0;34m[SUCCESS][0m 2025-10-21 23:25:12 - Remote environment configured
+[0;32m[INFO][0m 2025-10-21 23:25:12 - === Transferring Files to Remote Server ===
+[0;32m[INFO][0m 2025-10-21 23:25:14 - Syncing files to ec2-16-171-172-51.eu-north-1.compute.amazonaws.com:/home/ubuntu/apps/my-docker-app...
+rsync error: received SIGINT, SIGTERM, or SIGHUP (code 20) at rsync.c(644) [sender=3.1.3]

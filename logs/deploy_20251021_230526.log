@@ -1,0 +1,255 @@
+[0;32m[INFO][0m 2025-10-21 23:05:26 - === Deployment Script Started at Tue Oct 21 23:05:26 UTC 2025 ===
+[0;32m[INFO][0m 2025-10-21 23:05:26 - Configuration:
+[0;32m[INFO][0m 2025-10-21 23:05:26 -   Repository: https://github.com/Steveraw400/HNG-Docker-App.git
+[0;32m[INFO][0m 2025-10-21 23:05:26 -   Branch: main
+[0;32m[INFO][0m 2025-10-21 23:05:26 -   Server: ubuntu@16.171.172.51
+[0;32m[INFO][0m 2025-10-21 23:05:26 -   SSH Host: ec2-16-171-172-51.eu-north-1.compute.amazonaws.com
+[0;32m[INFO][0m 2025-10-21 23:05:26 -   App Port: 5000
+[0;32m[INFO][0m 2025-10-21 23:05:26 -   App Name: my-docker-app
+[0;32m[INFO][0m 2025-10-21 23:05:26 - Starting deployment process...
+[0;32m[INFO][0m 2025-10-21 23:05:26 - === Validating Configuration ===
+[0;34m[SUCCESS][0m 2025-10-21 23:05:26 - Configuration validated
+[0;32m[INFO][0m 2025-10-21 23:05:26 - === Cloning/Updating Repository ===
+[0;32m[INFO][0m 2025-10-21 23:05:26 - Cloning repository...
+Cloning into '/tmp/deploy_22581/HNG-Docker-App'...
+[0;34m[SUCCESS][0m 2025-10-21 23:05:28 - Repository ready at: /tmp/deploy_22581/HNG-Docker-App
+[0;32m[INFO][0m 2025-10-21 23:05:28 - === Verifying Docker Configuration ===
+[0;34m[SUCCESS][0m 2025-10-21 23:05:28 - Found Dockerfile
+[0;32m[INFO][0m 2025-10-21 23:05:28 - === Testing SSH Connection ===
+[0;34m[SUCCESS][0m 2025-10-21 23:05:31 - SSH connection to ec2-16-171-172-51.eu-north-1.compute.amazonaws.com successful
+[0;32m[INFO][0m 2025-10-21 23:05:31 - === Setting Up Remote Environment ===
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-1035-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Oct 21 23:05:31 UTC 2025
+
+  System load:  0.0               Processes:             113
+  Usage of /:   35.1% of 7.57GB   Users logged in:       0
+  Memory usage: 35%               IPv4 address for ens5: 172.31.33.31
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+28 updates can be applied immediately.
+20 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+[INFO] Updating system packages...
+[INFO] Installing prerequisites...
+[INFO] Docker already installed
+[INFO] Docker Compose already installed
+[INFO] Nginx already installed
+[SUCCESS] Environment setup complete
+[INFO] Docker version: Docker version 28.2.2, build 28.2.2-0ubuntu1~22.04.1
+[INFO] Docker Compose version: Docker Compose version v2.40.1
+[INFO] Nginx version: nginx version: nginx/1.18.0 (Ubuntu)
+[0;34m[SUCCESS][0m 2025-10-21 23:05:38 - Remote environment configured
+[0;32m[INFO][0m 2025-10-21 23:05:38 - === Transferring Files to Remote Server ===
+[0;32m[INFO][0m 2025-10-21 23:05:40 - Syncing files to ec2-16-171-172-51.eu-north-1.compute.amazonaws.com:/home/ubuntu/apps/my-docker-app...
+sending incremental file list
+./
+Dockerfile
+            339 100%    0.00kB/s    0:00:00              339 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=4/6)
+README.md
+            406 100%  198.24kB/s    0:00:00              406 100%  132.16kB/s    0:00:00 (xfr#2, to-chk=3/6)
+app.py
+            200 100%   48.83kB/s    0:00:00              200 100%   48.83kB/s    0:00:00 (xfr#3, to-chk=2/6)
+deploy.sh
+            700   4%  136.72kB/s    0:00:00           17,016 100%    2.70MB/s    0:00:00 (xfr#4, to-chk=1/6)
+requirements.txt
+              6 100%    0.84kB/s    0:00:00                6 100%    0.84kB/s    0:00:00 (xfr#5, to-chk=0/6)
+
+sent 361 bytes  received 288 bytes  185.43 bytes/sec
+total size is 17,967  speedup is 27.68
+[0;34m[SUCCESS][0m 2025-10-21 23:05:43 - Files transferred successfully
+[0;32m[INFO][0m 2025-10-21 23:05:43 - === Deploying Dockerized Application ===
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-1035-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Oct 21 23:05:31 UTC 2025
+
+  System load:  0.0               Processes:             113
+  Usage of /:   35.1% of 7.57GB   Users logged in:       0
+  Memory usage: 35%               IPv4 address for ens5: 172.31.33.31
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+28 updates can be applied immediately.
+20 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+[INFO] Stopping existing containers...
+my-docker-app
+my-docker-app
+[INFO] Building Docker image...
+Sending build context to Docker daemon  24.06kB
+Step 1/6 : FROM python:3.9-slim
+ ---> 725dd64d2f62
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 7e149a888802
+Step 3/6 : COPY . .
+ ---> Using cache
+ ---> d104379d47c2
+Step 4/6 : RUN pip install -r requirements.txt
+ ---> Using cache
+ ---> decac1f4f300
+Step 5/6 : EXPOSE 5000
+ ---> Using cache
+ ---> 983fb97821e7
+Step 6/6 : CMD ["python", "my-app.py"]
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+ ---> Using cache
+ ---> dc2ec9c01609
+Successfully built dc2ec9c01609
+Successfully tagged my-docker-app:latest
+[INFO] Running Docker container...
+a470a297fb46070e3c0e678ecd3a6073b0cceaced8db10436c238f9bd3dcb9fc
+[SUCCESS] Application deployed
+[0;34m[SUCCESS][0m 2025-10-21 23:05:56 - Application deployment complete
+[0;32m[INFO][0m 2025-10-21 23:05:56 - === Validating Deployment ===
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-1035-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Oct 21 23:05:31 UTC 2025
+
+  System load:  0.0               Processes:             113
+  Usage of /:   35.1% of 7.57GB   Users logged in:       0
+  Memory usage: 35%               IPv4 address for ens5: 172.31.33.31
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+28 updates can be applied immediately.
+20 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+[INFO] Checking Docker service...
+[INFO] Checking container status...
+CONTAINER ID   IMAGE                  COMMAND              CREATED         STATUS         PORTS                      NAMES
+a470a297fb46   my-docker-app:latest   "python my-app.py"   8 seconds ago   Up 8 seconds   127.0.0.1:5000->5000/tcp   my-docker-app
+[INFO] Checking container health...
+[INFO] Container logs (last 20 lines):
+ * Serving Flask app 'my-app'
+ * Debug mode: off
+[SUCCESS] Container is running successfully
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.0.2:5000
+[33mPress CTRL+C to quit[0m
+[0;34m[SUCCESS][0m 2025-10-21 23:06:04 - Deployment validated
+[0;32m[INFO][0m 2025-10-21 23:06:04 - === Configuring Nginx Reverse Proxy ===
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-1035-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Oct 21 23:05:31 UTC 2025
+
+  System load:  0.0               Processes:             113
+  Usage of /:   35.1% of 7.57GB   Users logged in:       0
+  Memory usage: 35%               IPv4 address for ens5: 172.31.33.31
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+28 updates can be applied immediately.
+20 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+1 additional security update can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '24.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+[INFO] Fixing Nginx hash bucket size...
+[INFO] server_names_hash_bucket_size already configured
+[INFO] Creating Nginx configuration...
+[INFO] Removing default Nginx site to prevent conflicts...
+[INFO] Enabling site...
+[INFO] Testing Nginx configuration...
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+[INFO] Reloading Nginx...
+[SUCCESS] Nginx configured and reloaded
+[0;34m[SUCCESS][0m 2025-10-21 23:06:07 - Nginx reverse proxy configured
+[0;32m[INFO][0m 2025-10-21 23:06:07 - === Testing Application Endpoint ===
+[0;32m[INFO][0m 2025-10-21 23:06:10 - Testing local endpoint on server...
+HTTP Status: 200
+[0;32m[INFO][0m 2025-10-21 23:06:12 - Testing via Nginx (IP)...
+[0;34m[SUCCESS][0m 2025-10-21 23:06:12 - Application is accessible at http://16.171.172.51
+[0;32m[INFO][0m 2025-10-21 23:06:12 - Testing via Nginx (hostname)...
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 - Application is accessible at http://ec2-16-171-172-51.eu-north-1.compute.amazonaws.com
+[0;32m[INFO][0m 2025-10-21 23:06:13 - === Final Cleanup ===
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 - Temporary files removed
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 - ===================================================================
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 - Deployment completed successfully!
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 - Application URLs:
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 -   - http://16.171.172.51
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 -   - http://ec2-16-171-172-51.eu-north-1.compute.amazonaws.com
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 - Container name: my-docker-app
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 - Log file: /home/vagrant/my-docker-app/logs/deploy_20251021_230526.log
+[0;34m[SUCCESS][0m 2025-10-21 23:06:13 - ===================================================================
+[0;32m[INFO][0m 2025-10-21 23:06:13 - To cleanup this deployment, run: ./deploy.sh --cleanup
