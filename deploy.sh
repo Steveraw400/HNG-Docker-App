@@ -13,11 +13,11 @@ set -euo pipefail  # Exit on error, undefined vars, pipe failures
 # Note: Sensitive values should be set as environment variables
 ################################################################################
 GIT_REPO_URL="https://github.com/Steveraw400/HNG-Docker-App.git"
-GIT_PAT="${GIT_PAT:-}"  # Set via: export GIT_PAT="your_token"
+GIT_PAT="${GITHUB_PAT:-}"  # Set via: export GIT_PAT="your_token"
 GIT_BRANCH="main"
 SSH_USER="ubuntu"
-SERVER_IP="16.171.172.51"
-SSH_HOST="ec2-16-171-172-51.eu-north-1.compute.amazonaws.com"
+SERVER_IP="16-171-24-183"
+SSH_HOST="ec2-16-171-24-183.eu-north-1.compute.amazonaws.com"
 SSH_KEY_PATH="/home/vagrant/.ssh/oasis.pem"
 APP_PORT="5000"
 APP_NAME="my-docker-app"
